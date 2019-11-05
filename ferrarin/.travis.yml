@@ -1,0 +1,28 @@
+language: go
+go_import_path: github.com/soggiest/ferrarin
+sudo: required
+
+go:
+  - 1.7.5
+
+services:
+  - docker
+
+before_install:
+        #  - go get github.com/ericchiang/k8s
+
+notifications:
+  on_success: never
+  on_failure: never
+
+script:
+  - make ferrarin 
+
+after_success:
+  - export COMMIT=`echo $TRAVIS_COMMIT | head -c 8`
+  - export REPO=quay.io/nicholas_lane/ferrarin
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+  - docker login -u="$QUAY_USERNAME" -p="$QUAY_PASSWORD" quay.io
+  - docker build --pull -f Dockerfile -t $REPO:$COMMIT .
+  - docker tag $REPO:$COMMIT $REPO:$TAG
+  - docker -D push $REPO:$TAG
