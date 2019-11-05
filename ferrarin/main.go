@@ -46,6 +46,7 @@ func main() {
 		panic(err)
 	}
         fmt.Println("test")
+        fmt.Println("test2")
 	client, err := kubernetes.NewForConfig(config)
 	if err != nil {
 		panic(err)
