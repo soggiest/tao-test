@@ -48,6 +48,8 @@ func main() {
         fmt.Println("test")
         fmt.Println("test2")
         fmt.Println("test3")
+        fmt.Println("test4")
+
 	client, err := kubernetes.NewForConfig(config)
 	if err != nil {
 		panic(err)
