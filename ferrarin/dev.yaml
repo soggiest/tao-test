@@ -1,0 +1,22 @@
+# splash/values/dev.yaml
+#
+# Dev values for Splash.
+#
+# @author Nick Hentschel <nhentschel@wayfair.com>
+# @copyright 2018 Wayfair, LLC -- All rights reserved.
+
+---
+autoScaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 6
+
+ignoreAlerts: true
+
+resources:
+  requests:
+    cpu: 1500m
+    memory: 4Gi
+  limits:
+    cpu: 2
+    memory: 6Gi
