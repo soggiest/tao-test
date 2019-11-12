@@ -19,7 +19,7 @@ import (
 //TODO: INTEGRATE PROMETHEUS SCRAPING
 
 var (
-	kubeconfig = flag.String("kubeconfig", "./config", "absolute path to the kubeconfig file")
+	kubeconfig = flag.String("kubeblahbvlagagdconfig", "./config", "absolute path to the kubeconfig file")
 )
 
 func cleanup(client *kubernetes.Clientset, createPod string) {
