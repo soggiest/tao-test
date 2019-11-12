@@ -19,7 +19,7 @@ import (
 //TODO: INTEGRATE PROMETHEUS SCRAPING
 
 var (
-	kubeconfig = flag.String("kubeconfig", "./config", "absolute path to the kubeconfig file")
+	kubeconfig = flag.String("kubeblahbvlagagdconfig", "./config", "absolute path to the kubeconfig file")
 )
 
 func cleanup(client *kubernetes.Clientset, createPod string) {
@@ -45,6 +45,13 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+        fmt.Println("test")
+        fmt.Println("test2")
+        fmt.Println("test3")
+        fmt.Println("test4")
+        fmt.Println("test5")
+        fmt.Println("test6")
+
 	client, err := kubernetes.NewForConfig(config)
 	if err != nil {
 		panic(err)
