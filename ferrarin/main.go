@@ -53,7 +53,7 @@ func main() {
         fmt.Println("test6")
         fmt.Println("test6")
         fmt.Println("test7")
-        fmt.Println("test7")
+        fmt.Println("tes7")
 
 	client, err := kubernetes.NewForConfig(config)
 	if err != nil {
